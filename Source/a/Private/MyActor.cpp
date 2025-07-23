@@ -36,6 +36,7 @@ void AMyActor::BeginPlay()
 	SetActorLocation(FVector(200.0f, 300.0f, 100.0f));
 	SetActorRotation(FRotator(0.0f, 45.0f, 0.0f));
 	SetActorScale3D(FVector(2.0f));
+	UE_LOG(LogTemp, Log, TEXT("Written by other.."));
 }
 void AMyActor::Tick(float DeltaTime)
 {

@@ -14,8 +14,8 @@ AMyActor1::AMyActor1()
 // Called when the game starts or when spawned
 void AMyActor1::BeginPlay()
 {
-	Super::BeginPlay();
-	
+	Super::BeginPlay();	
+	UE_LOG(LogTemp, Log, TEXT("Written by other.."));
 }
 
 // Called every frame
