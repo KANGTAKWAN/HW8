@@ -36,7 +36,6 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "HUD")
 	UUserWidget* GetHUDWidget() const;
-
 	UFUNCTION(BlueprintCallable, Category = "HUD")
 	void ShowGameHUD();
 	UFUNCTION(BlueprintCallable, Category = "Menu")
@@ -45,5 +44,11 @@ public:
 	void StartGame();
 
 	virtual void BeginPlay() override;
+	
+	// Pause, Quit ÇÔ¼ö
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void PauseGame();
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void QuitGame();
 	
 };

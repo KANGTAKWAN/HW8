@@ -162,3 +162,27 @@ void AMyPlayerController::StartGame()
 	UGameplayStatics::OpenLevel(GetWorld(), FName("BasicLevel"));
 	SetPause(false);
 }
+void AMyPlayerController::PauseGame()
+{
+	// Game을 일시정지하면, 일반 타이머/틱이 멈춤
+	SetPause(true);
+
+	// 마우스 커서 보이도록, UI모드로 전환
+	bShowMouseCursor = true;
+	SetInputMode(FInputModeUIOnly());
+
+	// Menu Widget 띄우기
+	ShowMainMenu(false);
+}
+
+// 게임 종료(Quit) 버튼
+void AMyPlayerController::QuitGame()
+{
+	// 게임을 완전히 종료
+	UKismetSystemLibrary::QuitGame(
+		GetWorld(),
+		this,
+		EQuitPreference::Quit,
+		false
+	);
+}
